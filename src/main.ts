@@ -1,16 +1,11 @@
-const fastify = require('fastify')({
+import Fastify from 'fastify'
+import router from './routes/router'
+
+const fastify = Fastify({
   logger: true
 })
 
-
-
-fastify.post('/clientes/:id/transacoes', function (request, reply) {
-    return { hello: 'world'}
-})
-
-fastify.get('/clientes/:id/extrato', function (request, reply) {
-    return { hello: 'world'}
-})
+fastify.register(router)
 
 fastify.listen({ port: 3000 }, function (err, address) {
   if (err) {
