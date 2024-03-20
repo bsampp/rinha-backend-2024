@@ -1,0 +1,13 @@
+GET http://localhost:3000/clientes
+
+###
+
+POST http://localhost:3000/clientes/6/transacoes
+Content-Type: application/json
+
+{
+    "user_id": 6,
+    "amount": 1000,
+    "type": "c",
+    "description": "descricao"
+}
